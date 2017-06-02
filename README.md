@@ -6,6 +6,10 @@ The script will query PuppetDB using the Catalogs and Reports end points and cal
 
 You can then use these metrics to tune your PE infrastructure and calculate how many compile masters you require.
 
+## Configuration
+
+The script will use Puppet's API to get the certs location and PuppetDB hostname. So no configuration necessary
+
 ## Usage
 
 Copy this script to your Puppet Master, make it executable and run it.
@@ -19,14 +23,6 @@ Average catalog compilation time: 6.00 seconds
 ## Limitations
 
 Only tested on Puppet Enterprise. Should work with Puppet open source too.
-
-Currently, the script assumes that it will be executed from the Puppet Master and that PuppetDB is running on the same host.
-
-It can be used with split installations, just edit the line
-
-```ruby
-HOST       = `hostname -f`.chomp
-```
 
 ## Contributing
 
