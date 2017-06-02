@@ -25,12 +25,12 @@ if Puppet::Util::Puppetdb.config.respond_to?("server_urls")
   HOST = uri.host
   PORT = uri.port
   catalog_endpoint = "/pdb/query/v4/catalogs"
-  reports_endpoint = "/pdb/query/v4/reports"
+  reports_endpoint = "/pdb/query/v4/reports?limit=100&offset=100"
 else
   HOST = Puppet::Util::Puppetdb.server
   PORT = Puppet::Util::Puppetdb.port
   catalog_endpoint = "/v3/catalogs"
-  reports_endpoint = "/v3/reports"
+  reports_endpoint = "/v3/reports?limit=100&offset=100"
 end
 
 CACERT     = Puppet.settings['localcacert']
